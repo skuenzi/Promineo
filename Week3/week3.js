@@ -149,7 +149,7 @@ console.log('Is the average of array 1 [20, 20, 20, 40] greater than array 2 [20
 // 12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
 
 function willBuyDrink (isHotOutside, moneyInPocket) {
-    return isHotOutside && moneyInPocket > 10.50 ? true : false
+    return isHotOutside && (moneyInPocket > 10.50) ? true : false
  }
 
  console.log('Will buy drink? (true, 11)', willBuyDrink(true, 11))
@@ -167,5 +167,5 @@ function finishedWeek3 (functions, arrays) {
 
 console.log('Did I finish week 3 openclass assignments? (true, true)',finishedWeek3(true, true))
 console.log('Did I finish week 3 openclass assignments? (true, false)',finishedWeek3(true, false))
-console.log('Did I finish week 3 openclass assignments? (false, false)',finishedWeek3(false, false))
+console.log('Did I finish week 3 openclass assignments? ',finishedWeek3(false, false))
 
