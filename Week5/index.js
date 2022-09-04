@@ -70,12 +70,11 @@ class Menu {
         `)
     }
 
-    showChoirMenuOptions() {
+    showChoirMenuOptions(choirInfo) {
         return prompt(`
         0) Back
         1) Create Singer
-        2) View Singer
-        3) Delete Singer
+        2) Delete Singer
         ----------------
         ${choirInfo}
     `)
@@ -94,8 +93,6 @@ class Menu {
     createChoir() {
         let name = prompt('Enter name for new choir:')
         this.choirs.push(new Choir(name))
-
-        console.log('added a new choir')
     }
     
 
@@ -111,7 +108,7 @@ class Menu {
                     this.selectedChoir.singers[i].name + ' - ' + this.selectedChoir.singers[i].part + '\n'
             }
 
-            let selection = this.showChoirMenuOptions()
+            let selection = this.showChoirMenuOptions(description)
 
             switch (selection) {
                 case '1':
@@ -121,6 +118,27 @@ class Menu {
                     this.deleteSinger()
                     break;
             }
+        }
+    }
+
+    deleteChoir() {
+        let index = prompt('Enter the index of the choir you would like to remove:')
+        if (index >= 0 && index < this.choirs.length) {
+            this.choirs.splice(index, 1)
+        }
+    }
+
+    createSinger() {
+        let name = prompt('Enter name for new singer:')
+        let part = prompt('Enter part for new singer:')
+
+        this.selectedChoir.singers.push(new Singer(name, part))
+    }
+
+    deleteSinger() {
+        let index = prompt('Enter the index of the singer you would like to remove:')
+        if (index >= 0 && index < this.selectedChoir.singers.length) {
+            this.selectedChoir.singers.splice(index, 1)
         }
     }
 }
