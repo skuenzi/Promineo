@@ -26,6 +26,7 @@ class Deck {
         this.cards.push(new Card('diamonds', i + 1))
         this.cards.push(new Card('clubs', i + 1))
     }
+    return this.cards
 
   }
 
@@ -36,18 +37,10 @@ class Deck {
         let temp = cards[i]
         cards[i] = cards[j]
         cards[j] = temp
-
     }
+
+    return this.cards
   }
-
-  // deal cards to each player
-  dealCards() {
-    let player1 = new Player(this.cards.splice(0,26))
-    let player2 = new Player(this.cards.splice(0,26))
-
-    console.log(player1,player2)
-  }
-
 
 }
 
@@ -55,21 +48,39 @@ class Deck {
 class Player {
   constructor(cards) {
     this.cards = cards;
+    this.points = 0
   }
 }
 
 
-// create function to play game
-
-
-function play() {
-
-    // create and shuffle new deck
+function play(){
     let deck = new Deck()
-    deck.createNewDeck()
-    deck.shuffleDeck(deck.cards)
-    deck.dealCards()
+    let shuffledDeck = deck.shuffleDeck(deck.createNewDeck())
+    
+    // create players
+    let player1 = new Player(shuffledDeck.slice(0,26))
+    let player2 = new Player(shuffledDeck.slice(26,52))
 
+    for (let i = 0; i < player1.cards.length; i++) {
+        console.log(player1.cards[i], player2.cards[i])
+        if (player1.cards[i].value > player2.cards[i].value) {
+            console.log('player1 wins')
+            player1.points++
+        } else if (player1.cards[i].value < player2.cards[i].value) {
+            console.log('player2 wins')
+            player2.points++
+        }
+    }
+
+    if (player1.points > player2.points) {
+        console.log('Player 1 has won!') 
+    } else if (player1.points < player2.points) {
+        console.log('Player 2 has won!')
+    } else {
+        console.log(`It's a tie!`)
+    }
+
+    console.log(player1, player2)
 }
 
 play()
