@@ -22,10 +22,10 @@ class Deck {
   // create a new deck
   createNewDeck() {
     for (let i = 0; i < 13; i++) {
-      this.cards.push(new Card("Hearts", i + 1));
-      this.cards.push(new Card("Spades", i + 1));
-      this.cards.push(new Card("Diamonds", i + 1));
-      this.cards.push(new Card("Clubs", i + 1));
+      this.cards.push(new Card("♥", i + 1));
+      this.cards.push(new Card("♠", i + 1));
+      this.cards.push(new Card("♦", i + 1));
+      this.cards.push(new Card("♣", i + 1));
     }
     return this.cards;
   }
@@ -51,6 +51,7 @@ class Player {
   }
 }
 
+
 function play() {
   let deck = new Deck();
   let shuffledDeck = deck.shuffleDeck(deck.createNewDeck());
@@ -59,32 +60,44 @@ function play() {
   let player1 = new Player(shuffledDeck.slice(0, 26));
   let player2 = new Player(shuffledDeck.slice(26, 52));
 
-    // 
+  //
   let i = 0;
+
   nextTurnBtn.addEventListener("click", () => {
-    if (i >= 26) {
-      if (player1.points > player2.points) {
+    if (i < 26) {
+      // after 26 rounds, check which player has won
+      if (player1.points > player2.points && i == 25) {
         winner.innerHTML = "Player 1 has won!";
-      } else if (player1.points < player2.points) {
+      } else if (player1.points < player2.points && i == 25) {
         winner.innerHTML = "Player 2 has won!";
-      } else {
+      } else if (i == 25) {
         winner.innerHTML = `It's a tie!`;
       }
-      nextTurnBtn.disabled = true;
+
+      // set html to current cards
+      player1Card.innerHTML = `${player1.cards[i].value} ${player1.cards[i].suite} `;
+      player2Card.innerHTML = `${player2.cards[i].value} ${player2.cards[i].suite} `;
+
+      // check which player has won current round
+      if (player1.cards[i].value > player2.cards[i].value) {
+        player1.points++;
+        console.log(`Round ${i+1} goes to Player 1`)
+      } else if (player1.cards[i].value < player2.cards[i].value) {
+        player2.points++;
+        console.log(`Round ${i+1} goes to Player 2`)
+      }
+
+     // set html to current scores
+      player1Score.innerHTML = player1.points;
+      player2Score.innerHTML = player2.points;
+
+      // move on to next round
+       i++;
+
+    } else {
+      nextTurnBtn.disabled = true
     }
 
-    player1Card.innerHTML = `${player1.cards[i].value} of ${player1.cards[i].suite} `;
-    player2Card.innerHTML = `${player2.cards[i].value} of ${player2.cards[i].suite} `;
-
-    if (player1.cards[i].value > player2.cards[i].value) {
-      player1.points++;
-    } else if (player1.cards[i].value < player2.cards[i].value) {
-      player2.points++;
-    }
-    // console.log(player1.cards[i], player2.cards[i])
-    i++;
-    player1Score.innerHTML = player1.points;
-    player2Score.innerHTML = player2.points;
   });
 }
 
