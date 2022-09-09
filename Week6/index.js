@@ -1,9 +1,4 @@
-const player1Card = document.querySelector(".player-1-card");
-const player2Card = document.querySelector(".player-2-card");
-const player1Score = document.querySelector(".player-1-score");
-const player2Score = document.querySelector(".player-2-score");
-const nextTurnBtn = document.querySelector(".next-turn-btn");
-const winner = document.querySelector(".winner");
+
 
 // create card class with suite/value
 class Card {
@@ -60,24 +55,15 @@ function play() {
   let player1 = new Player(shuffledDeck.slice(0, 26));
   let player2 = new Player(shuffledDeck.slice(26, 52));
 
-  //
-  let i = 0;
 
-  nextTurnBtn.addEventListener("click", () => {
-    if (i < 26) {
-      // after 26 rounds, check which player has won
-      if (player1.points > player2.points && i == 25) {
-        winner.innerHTML = "Player 1 has won!";
-      } else if (player1.points < player2.points && i == 25) {
-        winner.innerHTML = "Player 2 has won!";
-      } else if (i == 25) {
-        winner.innerHTML = `It's a tie!`;
-      }
+    for (let i = 0; i < 26; i ++) {
+      // log round
+      console.log(`Round ${i + 1}`)
 
-      // set html to current cards
-      player1Card.innerHTML = `${player1.cards[i].value} ${player1.cards[i].suite} `;
-      player2Card.innerHTML = `${player2.cards[i].value} ${player2.cards[i].suite} `;
-
+      // log current cards
+      console.log( `Player 1 Card: ${player1.cards[i].value} ${player1.cards[i].suite} `);
+      console.log(`Player 2 Card: ${player2.cards[i].value} ${player2.cards[i].suite} `);
+      
       // check which player has won current round
       if (player1.cards[i].value > player2.cards[i].value) {
         player1.points++;
@@ -86,19 +72,21 @@ function play() {
         player2.points++;
         console.log(`Round ${i+1} goes to Player 2`)
       }
-
-     // set html to current scores
-      player1Score.innerHTML = player1.points;
-      player2Score.innerHTML = player2.points;
-
-      // move on to next round
-       i++;
-
+      
+      // log current scores
+      console.log('Player 1 Score: ' + player1.points);
+      console.log('Player 2 Score: ' + player2.points);
+    } 
+    
+    // after 26 rounds, check which player has won
+    if (player1.points > player2.points) {
+      console.log("Player 1 has won!");
+    } else if (player1.points < player2.points) {
+      console.log("Player 2 has won!");
     } else {
-      nextTurnBtn.disabled = true
+      console.log(`It's a tie!`);
     }
-
-  });
+    
 }
 
 play();
