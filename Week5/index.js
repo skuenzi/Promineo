@@ -84,7 +84,7 @@ class Menu {
         let choirsString = ''
 
         for (let i = 0; i < this.choirs.length; i++) {
-            choirsString += i + ') ' + JSON.stringify(this.choirs[i].name )+ '\n'
+            choirsString += i + ') ' + this.choirs[i].name + '\n'
         }
 
         alert(choirsString)
