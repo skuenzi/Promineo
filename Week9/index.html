@@ -3,33 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
     <title>Climbs</title>
   </head>
   <body>
-    <h1>My Favorite Climbs</h1>
-    <main class="container ">
-        <article class="row mt-5" >
-          <img class="col-sm" style="height: 25rem; object-fit: contain;" src="/images/aftersix.jpeg" alt="" />
-          <div class="col-lg">
-              <h2>After Six, Yosemite Valley</h2>
-              <p>This was such a fun climb, but so much harder than expected. The first pitch, which has a polished crack system, is supposed to be 5.7. Hardest 5.7 I've ever climbed. I took two newbies up this climb and one of them cried. Which is understandable. But now she's totally into climbing so it's fine.</p>
-          </div>
-        </article>
-        <article class="row mt-5" >
-          <img class="col-sm" style="height: 25rem; object-fit: contain;" src="/images/oliveoil.jpeg" alt="" />
-          <div class="col-lg">
-              <h2>Olive Oil, Red Rocks Canyon</h2>
-              <p>I've climbed this twice. The first time was horrifying (climbing with an inexperienced follower in the dark, running out of rope, the climb itself really run-out). The second time was really fun. It's got great exposure and some really fun moves.</p>
-          </div>
-        </article>
-        <article class="row mt-5 mb-5" >
-          <img class="col-sm" style="height: 25rem; width: 40%; object-fit: cover;" src="/images/baboquivari.jpeg" alt="" />
-          <div class="col-lg">
-              <h2>Southeast Arete, Baboquivari Peak</h2>
-              <p>This was QUITE the adventure. It was incredibly fun, but exhausting. The hike down in the dark was difficult, to put it nicely. But overall, a really cool experience. </p>
-          </div>
-        </article>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Sara Climbs</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Favorite Climbs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/gear.html">Favorite Gear</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.mountainproject.com/"
+            >Mountain Project</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <table class="table table-striped mx-4 mt-4">
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Height</th>
+        <th>pitches</th>
+        <th>Grade</th>
+        <th>Climb Type</th>
+      </tr>
+      <tr>
+        <td>After Six</td>
+        <td>Yosemite</td>
+        <td>600ft</td>
+        <td>5 </td>
+        <td>5.7</td>
+        <td>Trad</td>
+      </tr>
+      <tr>
+        <td>Olive Oil</td>
+        <td>Red Rock Canyon</td>
+        <td>600ft</td>
+        <td>5 </td>
+        <td>5.7</td>
+        <td>Trad</td>
+      </tr>
+      <tr>
+        <td>Southeast Arete</td>
+        <td>Baboquivari Peak</td>
+        <td>4400ft</td>
+        <td>7 pitches</td>
+        <td>5.6</td>
+        <td>Trad/Hike</td>
+      </tr>
+    </table>
+    <main class="container">
+      <article class="row mt-5">
+        <img
+          class="col-sm"
+          style="height: 25rem; object-fit: contain"
+          src="/images/aftersix.jpeg"
+          alt=""
+        />
+        <div class="col-lg">
+          <h2>After Six, Yosemite Valley</h2>
+          <p>
+            This was such a fun climb, but so much harder than expected. The
+            first pitch, which has a polished crack system, is supposed to be
+            5.7. Hardest 5.7 I've ever climbed. I took two newbies up this climb
+            and one of them cried. Which is understandable. But now she's
+            totally into climbing so it's fine.
+          </p>
+        </div>
+      </article>
+      <article class="row mt-5">
+        <img
+          class="col-sm"
+          style="height: 25rem; object-fit: contain"
+          src="/images/oliveoil.jpeg"
+          alt=""
+        />
+        <div class="col-lg">
+          <h2>Olive Oil, Red Rocks Canyon</h2>
+          <p>
+            I've climbed this twice. The first time was horrifying (climbing
+            with an inexperienced follower in the dark, running out of rope, the
+            climb itself really run-out). The second time was really fun. It's
+            got great exposure and some really fun moves.
+          </p>
+        </div>
+      </article>
+      <article class="row mt-5 mb-5">
+        <img
+          class="col-sm"
+          style="height: 25rem; width: 40%; object-fit: cover"
+          src="/images/baboquivari.jpeg"
+          alt=""
+        />
+        <div class="col-lg">
+          <h2>Southeast Arete, Baboquivari Peak</h2>
+          <p>
+            This was QUITE the adventure. It was incredibly fun, but exhausting.
+            The hike down in the dark was difficult, to put it nicely. But
+            overall, a really cool experience.
+          </p>
+        </div>
+      </article>
     </main>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

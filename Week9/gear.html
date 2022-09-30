@@ -3,25 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <title>Gear</title>
   </head>
   <body>
-    <main>
-      <article>
-        <img src="" alt="" />
-        <h2></h2>
-        <p></p>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Sara Climbs</a>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/index.html">Favorite Climbs</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/gear.html">Favorite Gear</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.mountainproject.com/">Mountain Project</a></li>
+      </ul>
+    </nav>
+    <main class="container">
+      <article class="row mt-5">
+        <img class="col-sm" style="height: 25rem; object-fit: contain;" src="images/cam1.jpeg" alt="" />
+        <div class="col-lg">
+
+          <h2>Black Diamond Camalot #1</h2>
+          <p>This was my first piece of trad gear, so it's my favorite. A good trusty no. 1. Fits in so many places, is fairly light, and the prettiest color (imho). I love this piece of gear  in a totally normal and not parasocial way. </p>
+        </div>
       </article>
-      <article>
-        <img src="" alt="" />
-        <h2></h2>
-        <p></p>
+      <article class="row mt-5">
+        <img class="col-sm" style="height: 25rem; object-fit: contain;" src="images/atc.jpeg" alt="" />
+        <div class="col-lg">
+          <h2>Black Diamond ATC Guide</h2>
+          <p>An excellent alpine belay device. ATC Guides are super cool because you can make them auto-blocking if belaying from above, which is so useful on long alpine climbs where you don't want the extra weight and complexity of a GriGri. </p>
+
+        </div>
       </article>
-      <article>
-        <img src="" alt="" />
-        <h2></h2>
-        <p></p>
+      <article class="row my-5">
+        <img class="col-sm" style="height: 25rem; object-fit: contain;" src="images/BD_camalots.jpeg" alt="" />
+        <div class="col-lg">
+          <h2>Black Diamond Camalots #4 and #5</h2>
+          <p>These beefy boys are just fun. Not particularly useful in most places (they're too big to place in a lot of cracks). But damn, if they don't look cool and make you feel awesome when you can use them. </p>
+
+        </div>
       </article>
+      <form class="row">
+        <label class="form-label col-sm-2">
+          Add your favorite: 
+          
+        </label>
+        <input type="text" placeholder="Brand" class="form-control col-md">
+        <input type="text" placeholder="Gear Item" class="form-control col-md">
+        <textarea  placeholder="Description" class="form-control mb-5 col-md"></textarea>
+      </form>
     </main>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
 </html>
