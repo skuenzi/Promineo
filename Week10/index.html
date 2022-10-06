@@ -11,7 +11,7 @@
   </head>
   <body>
     <table
-      class="table p-2 table-striped table-primary table-hover table-bordered"
+      id="cats-table" class=" table p-2 table-primary table-hover table-bordered"
     >
       <tr>
         <th scope="col">Name</th>
@@ -20,31 +20,32 @@
         <th scope="col">Temperment</th>
       </tr>
       <tr>
-        <td scope="'row">Rufus</td>
+        <td scope="row">Rufus</td>
         <td>Gray Tuxedo</td>
         <td>Domestic Shorthair</td>
         <td>Loves a select number of people, otherwise aloof</td>
       </tr>
       <tr>
-        <td scope="'row">Lyle</td>
+        <td scope="row">Lyle</td>
         <td>Void</td>
         <td>Domestic Shorthair</td>
         <td>Large, affectionate, chatty</td>
       </tr>
       <tr>
-        <td scope="'row">Nike</td>
+        <td scope="row">Nike</td>
         <td>Tabby</td>
         <td>Rotund Domestic Shorthair</td>
         <td>Smart, soft, fierce, loyal to only one person</td>
       </tr>
       <tr>
-        <td scope="'row">Felix</td>
+        <td scope="row">Felix</td>
         <td>Black Tuxedo</td>
         <td>Domestic Shorthair</td>
         <td>Friendliest cat in the world, snuggly, goofy</td>
       </tr>
     </table>
-    <form class="needs-validation">
+
+    <form id="new-cat-form" class="needs-validation ">
       <h3 class="px-3">Add a Cat</h3>
       <table class="table p-2 table-primary table-hover">
         <tr>
@@ -90,9 +91,11 @@
           </td>
         </tr>
       </table>
-      <button type="button" class="btn btn-outline-primary px-4 mx-5 float-end">Add Cat</button>
+      <button type="button" id='add-cat-btn' class="btn btn-outline-primary px-4 mx-5 float-end">
+        Add Cat
+      </button>
     </form>
-
+    <script src="index.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
