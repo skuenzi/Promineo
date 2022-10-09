@@ -25,3 +25,5 @@ const addCat = () => {
 };
 
 addNewCat.addEventListener("click", addCat);
+
+
