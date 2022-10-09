@@ -80,4 +80,5 @@ $('.btn').click(() => {
     cells.forEach(cell => cell.innerText = '')
     turn = 'X'
     $(".turn").text("Turn: X");
+    $('.alert').remove()
 })
