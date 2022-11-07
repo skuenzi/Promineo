@@ -1,8 +1,6 @@
 const todosContainer = $(".todos-container");
-const newTodoForm = $(".new-todo-form");
 const newTodoInput = $(".new-todo");
 const submitNewTodoInputBtn = $(".submit-new-todo-btn");
-const newTodoBtn = $(".new-todo-btn");
 const url = "https://63436bb43f83935a78536bd6.mockapi.io/todos";
 
 const renderTodos = () => {
@@ -31,9 +29,6 @@ const renderTodos = () => {
 
 renderTodos();
 
-newTodoBtn.on("click", () => {
-  newTodoForm.toggleClass("invisible");
-});
 
 submitNewTodoInputBtn.on("click", () => {
   $.post(
@@ -49,23 +44,7 @@ submitNewTodoInputBtn.on("click", () => {
   );
 });
 
-const getAllTodos = () => {
-  return $.get(url);
-};
 
-const getTodo = (id) => {
-  return $.get(url + `/${id}`);
-};
-
-const updateTodo = (todo) => {
-  return $.ajax({
-    url: url + `/${todo.id}`,
-    dataType: "json",
-    data: JSON.stringify(todo),
-    contentType: "application/json",
-    type: "PUT",
-  });
-};
 
 const deleteTodo = (id) => {
   $.ajax({
