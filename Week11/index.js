@@ -24,7 +24,6 @@ const handleClick = (e) => {
   } else {
     e.target.innerText = "O";
     turn = "X";
-
     $(".turn").text("Turn: X");
   }
   checkWin();
@@ -82,3 +81,4 @@ $('.btn').click(() => {
     $(".turn").text("Turn: X");
     $('.alert').remove()
 })
+
